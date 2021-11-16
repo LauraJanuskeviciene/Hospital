@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <a href="{{'appointments/create'}}" class="btn btn-dark">Add new appointment</a>
                 </div>
             </div>
         </div>

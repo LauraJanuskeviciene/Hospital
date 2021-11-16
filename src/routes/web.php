@@ -21,3 +21,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('appointments/create', [App\Http\Controllers\AppointmentController::class, 'create'])->name('appointments/create');
+    Route::post('appointments/store', [App\Http\Controllers\AppointmentController::class, 'store'])->name('appointments/store');
+//    Route::resource('appointments', 'AppointmentController');
+});
